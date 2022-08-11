@@ -1,10 +1,6 @@
 # Exercise: 
 <img src="./img/exercise.png">
 
-- Trainee: Lu The Vy
-- ID: VyLT4
-- Class: HCM22_FR_DATA_02
-
 ---
 ## Requirements
 - `Visual Studio Code` - Main IDE.
