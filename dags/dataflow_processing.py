@@ -1,8 +1,15 @@
+"""
+    This source is used for processing CSV data file
+"""
 import sqlite3
 import pandas as pd
 
 
 def db_to_csv():
+    """
+    Convert database (.db) file to CSV format
+    :return: CSV data file
+    """
     conn = sqlite3.connect('dags/weather.db',
                             isolation_level=None,
                             detect_types=sqlite3.PARSE_COLNAMES)
@@ -13,21 +20,37 @@ def db_to_csv():
 
 
 def read_sysdimen_csv():
+    """
+    Convert data in CSV column to list
+    :return: data of column in list
+    """
     df = pd.read_csv('dags/data/SYS_DIMEN.csv')
     list_data = df.loc[:, ['y_id','yp','counry','unri','un']].values.tolist()
     return list_data
 
 def read_geolocdimen_csv():
+    """
+    Convert data in CSV column to list
+    :return: data of column in list
+    """
     df = pd.read_csv('dags/data/GEOLOC_DIMEN.csv')
     list_data = df.loc[:, ['coord_id','coord_lon','coord_la','imzon','id','nam','cod']].values.tolist()
     return list_data
 
 def read_weatherdimen_csv():
+    """
+    Convert data in CSV column to list
+    :return: data of column in list
+    """
     df = pd.read_csv('dags/data/WEATHER_DIMEN.csv')
     list_data = df.loc[:, ['wahr_id','main','dcripion','icon']].values.tolist()
     return list_data
 
 def read_weatherfact_csv():
+    """
+    Convert data in CSV column to list
+    :return: data of column in list
+    """
     df = pd.read_csv('dags/data/WEATHER_FACT.csv')
     list_data = df.loc[:, ['coord_id',
                            'wahr_id',

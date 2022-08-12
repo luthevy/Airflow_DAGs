@@ -1,3 +1,6 @@
+"""
+    This file is used for loading data into PostgreSQL DB
+"""
 from dataflow_processing import read_geolocdimen_csv
 from dataflow_processing import read_sysdimen_csv
 from dataflow_processing import read_weatherdimen_csv
@@ -5,6 +8,9 @@ from dataflow_processing import read_weatherfact_csv
 from airflow.providers.postgres.operators.postgres import PostgresOperator
 
 def insert_geoloc_table():
+    """
+    Insert data into GEOLOC table
+    """
     row = read_geolocdimen_csv()
     return PostgresOperator(
             task_id='insert_GEOLOC_table',
@@ -15,6 +21,9 @@ def insert_geoloc_table():
         )
 
 def insert_sys_table():
+    """
+    Insert data into SYSTEM table
+    """
     row = read_sysdimen_csv()
     return PostgresOperator(
             task_id='insert_SYS_table',
@@ -25,6 +34,9 @@ def insert_sys_table():
         )
 
 def insert_weatherdimen_table():
+    """
+    Insert data into WEATHER_DIMENSION table
+    """
     row = read_weatherdimen_csv()
     return PostgresOperator(
             task_id='insert_WEATHER_table',
@@ -35,6 +47,9 @@ def insert_weatherdimen_table():
         )
 
 def insert_weatherfact_table():
+    """
+    Insert data into WEATHER_FACT table
+    """
     row = read_weatherfact_csv()
     return PostgresOperator(
             task_id='insert_WEATHERFACT_table',

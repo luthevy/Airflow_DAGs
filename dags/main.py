@@ -1,3 +1,6 @@
+"""
+    This source is used for initializing Airflow DAGs
+"""
 from airflow import DAG
 from airflow.utils.dates import days_ago
 from airflow.providers.postgres.operators.postgres import PostgresOperator
