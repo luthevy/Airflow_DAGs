@@ -1,4 +1,3 @@
-# Exercise: 
 <img src="./img/exercise.png">
 
 ---
