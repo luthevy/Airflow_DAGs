@@ -1,4 +1,5 @@
-<img src="./img/exercise.png">
+# Introduction
+- The scope is to build a data pipeline to automatically load data from CSV file to Postgresql DB with Airflow DAGs
 
 ---
 ## Requirements
